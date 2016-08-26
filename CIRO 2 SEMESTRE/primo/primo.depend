@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1471221966 source:c:\users\casasbahia\teste\ciro 2 semestre\primo\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+

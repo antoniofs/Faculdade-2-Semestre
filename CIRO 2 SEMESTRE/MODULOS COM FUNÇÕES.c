@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+int fat(int);
+int permutacoes(int);
+int arranjos(int, int);
+int combinacoes(int, int);
+
+int main()
+{
+    int n, k;
+
+    printf("Informe 2 numeros naturais: ");
+    scanf("%d %d", &n, &k);
+
+/*    printf("Permutacoes de %d: %d\n", n, fat(n));
+    printf("Arranjos de %d tomados %d a %d: %d\n", n, k, k, fat(n) / fat(n - k));
+    printf("Combinacoes de %d tomados %d a %d: %d\n", n, k, k, fat(n) / (fat(k) * fat(n - k)));
+    */
+
+    printf("Permutacoes de %d: %d\n", n, permutacoes(n));
+    printf("Arranjos de %d tomados %d a %d: %d\n", n, k, k, arranjos(n, k));
+    printf("Combinacoes de %d tomados %d a %d: %d\n", n, k, k, combinacoes(n, k));
+
+    return 0;
+}
+
+int fat(int n)
+{
+    int f = 1;
+    while (n > 1) {
+        f *= n--;
+    }
+    return f;
+}
+
+int permutacoes(int n)
+{
+    return fat(n);
+}
+
+int arranjos(int n, int k)
+{
+    return fat(n) / fat(n - k);
+}
+
+int combinacoes(int n, int k)
+{
+    return fat(n) / (fat(k) * fat(n - k));
+}
